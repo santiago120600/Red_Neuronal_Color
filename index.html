@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <input onChange="update(this.jscolor, '#pr3')" onInput="update(this.jscolor, '#pr4')" value="CCFFAA" data-jscolor="{alpha:0.7}">
+    <div id="sitio">Mi sitio web</div>
+    <script src="jscolor.js"></script> 
+    <script type="text/javascript">
+        jscolor.presets.default = {
+            format:'hex'
+        }
+
+        function update(color){
+            console.log(color);
+            var div = document.getElementById("sitio");
+            var r = Math.trunc(color.channels.r);
+            var g = Math.trunc(color.channels.g);
+            var b = Math.trunc(color.channels.b);
+            div.style.background = "rgb("+r+","+g+","+b+")";
+        }
+    </script>
+</body>
+</html>
